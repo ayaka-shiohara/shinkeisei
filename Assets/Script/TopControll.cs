@@ -44,12 +44,12 @@ public class TopControll : MonoBehaviour
             text3 = GameObject.Find("Text3");
             text4 = GameObject.Find("Text4");
         }
-        
+
         red.SetActive(true);
         yellow.SetActive(true);
         green.SetActive(true);
         syousai.SetActive(true);
-        
+
         text1.SetActive(true);
         text2.SetActive(true);
         text3.SetActive(true);
@@ -74,6 +74,8 @@ public class TopControll : MonoBehaviour
 
         Dropdown langdrop = GameObject.Find("LangDrop").GetComponent<Dropdown>();
         langdrop.value = (int)response.Rows[0]["language"];
+
+        StartCoroutine(CheckDialog());
     }
 
     // Update is called once per frame
@@ -193,5 +195,21 @@ public class TopControll : MonoBehaviour
         
         Text homepage = GameObject.Find("button4").GetComponentInChildren<Text>();
         homepage.text = TextManager.Get(TextManager.KEY.MENU_HOMEPAGE);
+    }
+
+    IEnumerator CheckDialog()
+    {
+        string url = "http://tech.ttc-net.co.jp/ShinkeiseiMobileWeb/webresources/jp.co.shinkeisei.entity.serviceinfo";
+        WWW kanriwww = new WWW(url);
+        yield return kanriwww;
+
+        string kanriText = kanriwww.text;
+        //kanriText = "お知らせテストお知らせテストお知らせテストお知らせテスト";
+
+        if (kanriText != "")
+        {
+            GameObject dialog = GameObject.Find("Canvas").transform.Find("kanriDialog").gameObject;
+            dialog.SetActive(true);
+        }
     }
 }

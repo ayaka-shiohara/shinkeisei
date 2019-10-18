@@ -22,7 +22,6 @@ public class OpeKanriDialog : MonoBehaviour
     void Start()
     {
         WriteText();
-        this.gameObject.SetActive(false);
         StartCoroutine(GetKanri());
     }
 
@@ -46,17 +45,8 @@ public class OpeKanriDialog : MonoBehaviour
         string kanriText = kanriwww.text;
         //kanriText = "お知らせテストお知らせテストお知らせテストお知らせテスト";
 
-        if (kanriText != "")
-        {
-            this.gameObject.SetActive(true);
-
-            Text text = GameObject.Find("kanriText").GetComponent<Text>();
-            text.text = kanriText;
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+        Text text = GameObject.Find("kanriText").GetComponent<Text>();
+        text.text = kanriText;
     }
 
     private void WriteText()
