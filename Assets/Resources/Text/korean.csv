@@ -1,0 +1,99 @@
+DL_CHK_1	
+DL_CHK_2	의 데이터를 다운로드
+DL_SURE	하시겠습니까?
+YES	예
+NO	아닙니다 
+DL_VERCHK	버전 확인 중…
+DL_LOADING_1	
+DL_LOADING_2	를 다운로드 중
+DL_EXPANDING_1	
+DL_EXPANDING_2	를 전개 중
+DL_UPDATING_1	
+DL_UPDATING_2	를 업데이트 중
+DL_COMPLETE	다운로드 완료
+DL_WHILE	잠시 시간이 걸립니다
+DL_ERROR	연결 오류
+DL_PLEASE	전파의 좋은 위치로 이동하십시오
+DL_RETRY_1	
+DL_RETRY_2	 초 후에 다시 시도하십시오
+JIKOKU	시간표
+KOUNAIZU	구내도
+ANNNAIZU	역 안내도
+HOMEZU	홈 그림
+URL	URL
+LNKURL	연계하는 URL
+INFO_STOP	운전 보류
+INFO_DELAY	지연
+INFO_UNKYU	일부 열차 운행 중지
+INFO_TYOKUTU	직결 운행 중단
+INFO_INFO	정보가 있습니다
+INFO_NORMAL	평상 운전
+INFO_DETAIL	탭에서 상세보기
+MENU_SOUKOU	열차 주행 위치
+MENU_EKIINFO_1	역 정보
+MENU_EKIINFO_2	시간표 · 역 구내도 등
+MENU_HOMEPAGE	신 케이 세이 홈페이지
+UNKOU_TITLE	운행 정보
+UNKOU_CLOSE	닫기
+SOUKOU_MSG_1	열차 주행 위치 · 지연 시분은 기준이며,
+SOUKOU_MSG_2	실제와 다를 수 있습니다
+SOUKOU_UPDATE	업데이트
+NOBORI	상행선
+KUDARI	하행선
+MENU_EKIANNAI	역 구내 안내
+KAKUDAI	확대
+SYUKUSYO	축소
+JIKOKU_HEIJITU_1	평일
+JIKOKU_HEIJITU_2	월요일～금요일
+JIKOKU_KYUJITU_1	휴일
+JIKOKU_KYUJITU_2	토요일 · 일요일 · 공휴일
+RETURN	돌아 가기
+KANRI_TITLE	관리자로부터의 소식
+SL01	마쓰도
+SL02	가미혼고
+SL03	마쓰도신덴
+SL04	미노리다이
+SL05	야바시라
+SL06	도키와다이라
+SL07	고코
+SL08	모토야마
+SL09	구누기야마
+SL10	기타하쓰토미
+SL11	신카마가야
+SL12	하쓰토미
+SL13	가마가야다이부쓰
+SL14	후타와무코다이
+SL15	미사키
+SL16	다키후도
+SL17	다카네코단
+SL18	다카네키도
+SL19	기타나라시노
+SL20	나라시노
+SL21	야쿠엔다이
+SL22	마에바라
+SL23	신쓰다누마
+SL24	게이세이 쓰다누마
+SL01_2	Matsudo
+SL02_2	Kamihongo
+SL03_2	Matsudo-Shinden
+SL04_2	Minoridai
+SL05_2	Yabashira
+SL06_2	Tokiwadaira
+SL07_2	Goko
+SL08_2	Motoyama
+SL09_2	Kunugiyama
+SL10_2	Kita-Hatsutomi
+SL11_2	Shin-Kamagaya
+SL12_2	Hatsutomi
+SL13_2	Kamagaya-Daibutsu
+SL14_2	Futawamukodai
+SL15_2	Misaki
+SL16_2	Takifudo
+SL17_2	Takanekodan
+SL18_2	Takanekido
+SL19_2	Kita-Narashino
+SL20_2	Narashino
+SL21_2	Yakuendai
+SL22_2	Maebara
+SL23_2	Shin-Tsudanuma
+SL24_2	Keisei-Tsudanuma

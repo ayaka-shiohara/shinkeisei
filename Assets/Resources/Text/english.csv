@@ -1,0 +1,99 @@
+DL_CHK_1	Download 
+DL_CHK_2	 of data.
+DL_SURE	Are you OK?
+YES	Yes
+NO	No
+DL_VERCHK	Checking version…
+DL_LOADING_1	Downloading 
+DL_LOADING_2	.
+DL_EXPANDING_1	Expanding 
+DL_EXPANDING_2	.
+DL_UPDATING_1	Updating 
+DL_UPDATING_2	.
+DL_COMPLETE	Download complete.
+DL_WHILE	It takes a while.
+DL_ERROR	Connection error
+DL_PLEASE	Please move to a place with good signal.
+DL_RETRY_1	Will retry in 
+DL_RETRY_2	 second.
+JIKOKU	timetable
+KOUNAIZU	Station map
+ANNNAIZU	Station guide map
+HOMEZU	Station platform map
+URL	URL
+LNKURL	Link URL
+INFO_STOP	Stop driving
+INFO_DELAY	delay
+INFO_UNKYU	Some trains suspended
+INFO_TYOKUTU	Stop direct operation
+INFO_INFO	There is information
+INFO_NORMAL	Normal operation
+INFO_DETAIL	Tap here for details
+MENU_SOUKOU	Train travel position
+MENU_EKIINFO_1	Station information
+MENU_EKIINFO_2	Timetable, station map, etc
+MENU_HOMEPAGE	Shin-Keisei website
+UNKOU_TITLE	Driving information
+UNKOU_CLOSE	close
+SOUKOU_MSG_1	The train location and delay time are approximate
+SOUKOU_MSG_2	May differ from actual
+SOUKOU_UPDATE	update
+NOBORI	inbound line
+KUDARI	outbound line
+MENU_EKIANNAI	Station information
+KAKUDAI	Enlarge
+SYUKUSYO	Shrink
+JIKOKU_HEIJITU_1	Weekdays
+JIKOKU_HEIJITU_2	Monday to Friday
+JIKOKU_KYUJITU_1	Holiday
+JIKOKU_KYUJITU_2	Saturday・Sunday・Holiday
+RETURN	Return
+KANRI_TITLE	Information\nfrom the administrator
+SL01	Matsudo
+SL02	Kamihongo
+SL03	Matsudo-Shinden
+SL04	Minoridai
+SL05	Yabashira
+SL06	Tokiwadaira
+SL07	Goko
+SL08	Motoyama
+SL09	Kunugiyama
+SL10	Kita-Hatsutomi
+SL11	Shin-Kamagaya
+SL12	Hatsutomi
+SL13	Kamagaya-Daibutsu
+SL14	Futawamukodai
+SL15	Misaki
+SL16	Takifudo
+SL17	Takanekodan
+SL18	Takanekido
+SL19	Kita-Narashino
+SL20	Narashino
+SL21	Yakuendai
+SL22	Maebara
+SL23	Shin-Tsudanuma
+SL24	Keisei-Tsudanuma
+SL01_2	まつど
+SL02_2	かみほんごう
+SL03_2	まつどしんでん
+SL04_2	みのりだい
+SL05_2	やばしら
+SL06_2	ときわだいら
+SL07_2	ごこう
+SL08_2	もとやま
+SL09_2	くぬぎやま
+SL10_2	きたはつとみ
+SL11_2	しんかまがや
+SL12_2	はつとみ
+SL13_2	かまがやだいぶつ
+SL14_2	ふたわむこうだい
+SL15_2	みさき
+SL16_2	たきふどう
+SL17_2	たかねこうだん
+SL18_2	たかねきど
+SL19_2	きたならしの
+SL20_2	ならしの
+SL21_2	やくえんだい
+SL22_2	まえばら
+SL23_2	しんつだぬま
+SL24_2	けいせいつだぬま
