@@ -29,20 +29,9 @@ public class TopControll : MonoBehaviour
     private GameObject text3;
     private GameObject text4;
 
-    private GameObject kanri;
-
     // Use this for initialization
     void Start()
     {
-        if (kanri == null)
-        {
-            kanri = GameObject.Find("kanriDialog");
-        }
-        else
-        {
-            kanri.SetActive(true);
-        }
-
         if (red == null)
         {
             red = GameObject.Find("red");
@@ -68,8 +57,6 @@ public class TopControll : MonoBehaviour
 
         WriteText();
 
-        kanri.SetActive(false);
-
         SqliteDatabase sqlite = new SqliteDatabase("shinkeisei.db");
         string query = "SELECT * FROM user_info;";
         var response = sqlite.ExecuteQuery(query);
@@ -84,7 +71,6 @@ public class TopControll : MonoBehaviour
             Static.StationNo = "01";
         }
         StartCoroutine(ChangeInfo());
-        StartCoroutine(GetKanri());
 
         Dropdown langdrop = GameObject.Find("LangDrop").GetComponent<Dropdown>();
         langdrop.value = (int)response.Rows[0]["language"];
@@ -110,24 +96,6 @@ public class TopControll : MonoBehaviour
 
         var text = MakeText(www.text);
         changeButton(text);
-    }
-
-    IEnumerator GetKanri()
-    {
-        string url = "http://tech.ttc-net.co.jp/ShinkeiseiMobileWeb/webresources/jp.co.shinkeisei.entity.serviceinfo";
-        WWW kanriwww = new WWW(url);
-        yield return kanriwww;
-
-        string kanriText = kanriwww.text;
-        //kanriText = "お知らせテストお知らせテストお知らせテストお知らせテスト";
-
-        if(kanriText != "")
-        {
-            kanri.SetActive(true);
-
-            Text text = GameObject.Find("kanriText").GetComponent<Text>();
-            text.text = kanriText;
-        }
     }
 
     private string MakeText(string original)
@@ -225,16 +193,5 @@ public class TopControll : MonoBehaviour
         
         Text homepage = GameObject.Find("button4").GetComponentInChildren<Text>();
         homepage.text = TextManager.Get(TextManager.KEY.MENU_HOMEPAGE);
-
-        Text kanrititle = GameObject.Find("kanriTitle").GetComponent<Text>();
-        kanrititle.text = TextManager.Get(TextManager.KEY.KANRI_TITLE);
-
-        Text close = GameObject.Find("kanriButton").GetComponentInChildren<Text>();
-        close.text = TextManager.Get(TextManager.KEY.UNKOU_CLOSE);
-    }
-
-    public void closeKanri()
-    {
-        kanri.SetActive(false);
     }
 }
