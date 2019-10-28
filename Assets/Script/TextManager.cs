@@ -56,6 +56,8 @@ public static class TextManager
         SOUKOU_MSG_1,
         SOUKOU_MSG_2,
         SOUKOU_UPDATE,
+        TO_MATSUDO,
+        TO_TSUDANUMA,
         NOBORI,
         KUDARI,
         MENU_EKIANNAI,

@@ -283,10 +283,10 @@ public class StationController : MonoBehaviour {
 
     public void WriteText()
     {
-        Text soukou = GameObject.Find("soukouichi").GetComponentInChildren<Text>();
+        Text soukou = GameObject.Find("soukou").GetComponentInChildren<Text>();
         soukou.text = TextManager.Get(TextManager.KEY.MENU_SOUKOU);
 
-        Text jikoku = GameObject.Find("jikokuhyo").GetComponentInChildren<Text>();
+        Text jikoku = GameObject.Find("jikoku").GetComponentInChildren<Text>();
         jikoku.text = TextManager.Get(TextManager.KEY.JIKOKU);
 
         Text ekiannai = GameObject.Find("kounai").GetComponentInChildren<Text>();

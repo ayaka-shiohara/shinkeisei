@@ -16,7 +16,7 @@ DL_ERROR	Connection error
 DL_PLEASE	Please move to a place with good signal.
 DL_RETRY_1	Will retry in 
 DL_RETRY_2	 second.
-JIKOKU	timetable
+JIKOKU	Timetable
 KOUNAIZU	Station map
 ANNNAIZU	Station guide map
 HOMEZU	Station platform map
@@ -38,6 +38,8 @@ UNKOU_CLOSE	close
 SOUKOU_MSG_1	The train location and delay time are approximate
 SOUKOU_MSG_2	May differ from actual
 SOUKOU_UPDATE	update
+TO_MATSUDO	To Matsudo
+TO_TSUDANUMA	To Keisei-Tsudanuma
 NOBORI	inbound line
 KUDARI	outbound line
 MENU_EKIANNAI	Station information

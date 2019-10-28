@@ -217,13 +217,13 @@ public class DisplayData : MonoBehaviour {
         Text kaisatu = GameObject.Find("kaisatu").GetComponentInChildren<Text>();
         kaisatu.text = TextManager.Get(TextManager.KEY.KOUNAIZU);
 
-        Text soukou = GameObject.Find("soukouichi").GetComponentInChildren<Text>();
+        Text soukou = GameObject.Find("soukou").GetComponentInChildren<Text>();
         soukou.text = TextManager.Get(TextManager.KEY.MENU_SOUKOU);
 
-        Text jikoku = GameObject.Find("jikokuhyo").GetComponentInChildren<Text>();
+        Text jikoku = GameObject.Find("jikoku").GetComponentInChildren<Text>();
         jikoku.text = TextManager.Get(TextManager.KEY.JIKOKU);
 
-        Text modoru = GameObject.Find("return").GetComponentInChildren<Text>();
-        modoru.text = TextManager.Get(TextManager.KEY.RETURN);
+        Text ekiannai = GameObject.Find("kounai").GetComponentInChildren<Text>();
+        ekiannai.text = TextManager.Get(TextManager.KEY.MENU_EKIANNAI);
     }
 }

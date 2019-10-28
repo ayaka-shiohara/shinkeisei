@@ -238,26 +238,34 @@ public class JikokuControll : MonoBehaviour
         Text kyudetial_pan = GameObject.Find("kyujitsu_panel").transform.Find("syousai").GetComponentInChildren<Text>();
         kyudetial_pan.text = TextManager.Get(TextManager.KEY.JIKOKU_KYUJITU_2);
 
+        Text nobori_btn_hou = GameObject.Find("NoboriBtn").transform.Find("houkou").GetComponent<Text>();
+        nobori_btn_hou.text = TextManager.Get(TextManager.KEY.TO_MATSUDO);
         Text nobori_btn = GameObject.Find("NoboriBtn").transform.Find("nobori").GetComponent<Text>();
         nobori_btn.text = TextManager.Get(TextManager.KEY.NOBORI);
 
+        Text nobori_pan_hou = GameObject.Find("nobori_panel").transform.Find("houkou").GetComponent<Text>();
+        nobori_pan_hou.text = TextManager.Get(TextManager.KEY.TO_MATSUDO);
         Text nobori_pan = GameObject.Find("nobori_panel").transform.Find("nobori").GetComponent<Text>();
         nobori_pan.text = TextManager.Get(TextManager.KEY.NOBORI);
 
+        Text kudari_btn_hou = GameObject.Find("KudariBtn").transform.Find("houkou").GetComponent<Text>();
+        kudari_btn_hou.text = TextManager.Get(TextManager.KEY.TO_TSUDANUMA);
         Text kudari_btn = GameObject.Find("KudariBtn").transform.Find("kudari").GetComponent<Text>();
         kudari_btn.text = TextManager.Get(TextManager.KEY.KUDARI);
 
+        Text kudari_pan_hou = GameObject.Find("kudari_panel").transform.Find("houkou").GetComponent<Text>();
+        kudari_pan_hou.text = TextManager.Get(TextManager.KEY.TO_TSUDANUMA);
         Text kudari_pan = GameObject.Find("kudari_panel").transform.Find("kudari").GetComponent<Text>();
         kudari_pan.text = TextManager.Get(TextManager.KEY.KUDARI);
 
-        Text soukou = GameObject.Find("soukouichi").GetComponentInChildren<Text>();
+        Text soukou = GameObject.Find("soukou").GetComponentInChildren<Text>();
         soukou.text = TextManager.Get(TextManager.KEY.MENU_SOUKOU);
+
+        Text jikoku = GameObject.Find("jikoku").GetComponentInChildren<Text>();
+        jikoku.text = TextManager.Get(TextManager.KEY.JIKOKU);
 
         Text ekiannai = GameObject.Find("kounai").GetComponentInChildren<Text>();
         ekiannai.text = TextManager.Get(TextManager.KEY.MENU_EKIANNAI);
-
-        Text modoru = GameObject.Find("return").GetComponentInChildren<Text>();
-        modoru.text = TextManager.Get(TextManager.KEY.RETURN);
     }
 
     class JikokuData

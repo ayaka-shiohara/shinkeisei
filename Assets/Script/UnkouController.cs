@@ -260,11 +260,6 @@ public class UnkouController : MonoBehaviour {
                     obj = transform.Find(objname).gameObject;
                     obj.SetActive(true);
                 }
-                else
-                {
-                    GameObject houkou = obj.transform.Find("houkou").gameObject;
-                    houkou.SetActive(false);
-                }
             }
 
             Text delay = obj.transform.Find("chien").GetComponent<Text>();
@@ -346,12 +341,39 @@ public class UnkouController : MonoBehaviour {
     private void SetPos()
     {
         var scroll = GameObject.Find("MainScroll").GetComponent<ScrollRect>();
-        var pos = float.Parse(Static.StationNo) - 1;
+        var go = GameObject.Find(Static.StationNo);
+        var align = 1f;
+
+        var targetRect = go.transform.GetComponent<RectTransform>();
+        var contentHeight = scroll.content.rect.height;
+        var viewportHeight = scroll.viewport.rect.height;
+        // スクロール不要
+        if (contentHeight < viewportHeight) scroll.verticalNormalizedPosition = 0f;
+
+        // ローカル座標が contentHeight の上辺を0として負の値で格納されてる
+        // これは現在のレイアウト特有なのかもしれないので、要確認
+        var targetPos = contentHeight + GetPosY(targetRect) + targetRect.rect.height * align;
+        var gap = viewportHeight * align; // 上端〜下端あわせのための調整量
+        var normalizedPos = (targetPos - gap) / (contentHeight - viewportHeight);
+
+        normalizedPos = Mathf.Clamp01(normalizedPos);
+        scroll.verticalNormalizedPosition = normalizedPos;
+
+        //var scroll = GameObject.Find("MainScroll").GetComponent<ScrollRect>();
+        /*var aaa = Screen.height - 1608;// * 0.271f;
+        GameObject scroll = GameObject.Find("Content");
+        var pos = (float.Parse(Static.StationNo) - 1) * aaa;
+        scroll.transform.position = new Vector2(scroll.transform.position.x, scroll.transform.position.y + pos);
         scroll.verticalNormalizedPosition -= pos * scrollfloat;
         if (pos != 0)
         {
             scroll.verticalNormalizedPosition -= 0.005f;
-        }
+        }*/
+    }
+
+    private float GetPosY(RectTransform transform)
+    {
+        return transform.localPosition.y + transform.rect.y; //pivotによるズレをrect.yで補正
     }
 
     private void MakeTrain()
@@ -402,9 +424,6 @@ public class UnkouController : MonoBehaviour {
 
     private void WriteText()
     {
-        Text title = GameObject.Find("title").GetComponentInChildren<Text>();
-        title.text = TextManager.Get(TextManager.KEY.MENU_SOUKOU);
-
         Text attention = GameObject.Find("attention").transform.Find("Text").GetComponent<Text>();
         attention.text = TextManager.Get(TextManager.KEY.SOUKOU_MSG_1) + "\n" + TextManager.Get(TextManager.KEY.SOUKOU_MSG_2);
 
@@ -424,6 +443,11 @@ public class UnkouController : MonoBehaviour {
 
     private void SetNorikae()
     {
+        if(norikae_01 != null)
+        {
+            return;
+        }
+        
         norikae = new Dictionary<string, GameObject>();
 
         norikae_01 = GameObject.Find("norikae_01");
@@ -453,6 +477,11 @@ public class UnkouController : MonoBehaviour {
 
     private void SetBus()
     {
+        if (bus_01 != null)
+        {
+            return;
+        }
+
         bus = new Dictionary<string, GameObject>();
 
         bus_01 = GameObject.Find("bus_01");

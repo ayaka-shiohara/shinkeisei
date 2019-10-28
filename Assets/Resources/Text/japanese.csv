@@ -38,6 +38,8 @@ UNKOU_CLOSE	閉じる
 SOUKOU_MSG_1	列車走行位置・遅延時分は目安であり、
 SOUKOU_MSG_2	実際と異なる場合があります。
 SOUKOU_UPDATE	更新
+TO_MATSUDO	松戸方面
+TO_TSUDANUMA	京成津田沼方面
 NOBORI	上り
 KUDARI	下り
 MENU_EKIANNAI	駅構内案内
