@@ -8,6 +8,8 @@ using System.IO;
 /// </summary>
 public static class TextManager
 {
+    public static LANGUAGE lang;
+
     // 文字列格納、検索用ディクショナリー
     private static Dictionary<string, string> sDictionary = new Dictionary<string, string>();
 
@@ -136,8 +138,6 @@ public static class TextManager
     /// <param name="lang">使用言語</param>
     public static void Init()
     {
-        LANGUAGE lang;
-
         SqliteDatabase sqlite = new SqliteDatabase("shinkeisei.db");
         string query = "SELECT language FROM user_info;";
         var response = sqlite.ExecuteQuery(query);

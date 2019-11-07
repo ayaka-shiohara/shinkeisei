@@ -50,9 +50,13 @@ public class UnkouController : MonoBehaviour {
     private bool first = true;
     private GameObject nowOpen;
 
+    private GameObject dialog;
+
     // Use this for initialization
     void Start()
     {
+        dialog = GameObject.Find("question").transform.Find("base").gameObject;
+
         SetNorikae();
         SetBus();
 
@@ -70,7 +74,7 @@ public class UnkouController : MonoBehaviour {
 
         StartCoroutine(LoadNextScene());
 
-        if(Static.FavoStation != "")
+        if(Static.FavoStation != "" && setposflag)
         {
             toggleEki(Static.FavoStation);
         }
@@ -622,6 +626,16 @@ public class UnkouController : MonoBehaviour {
         }
         Sprite sprite = Resources.Load<Sprite>(imagepath);
         image.sprite = sprite;
+    }
+
+    public void OpenDialog()
+    {
+        dialog.SetActive(true);
+    }
+
+    public void CloseDialog()
+    {
+        dialog.SetActive(false);
     }
 
     class AppData

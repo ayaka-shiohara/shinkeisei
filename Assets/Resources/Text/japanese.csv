@@ -32,7 +32,7 @@ INFO_DETAIL	詳細はここをタップ
 MENU_SOUKOU	列車走行位置
 MENU_EKIINFO_1	各駅情報
 MENU_EKIINFO_2	時刻表・構内図等
-MENU_HOMEPAGE	新京成ホームページ
+MENU_HOMEPAGE	新京成\nホームページ
 UNKOU_TITLE	運行情報
 UNKOU_CLOSE	閉じる
 SOUKOU_MSG_1	列車走行位置・遅延時分は目安であり、

@@ -29,6 +29,10 @@ public class TopControll : MonoBehaviour
     private GameObject text3;
     private GameObject text4;
 
+    Text infostr;
+    Image infoimage;
+    Sprite clear;
+
     // Use this for initialization
     void Start()
     {
@@ -91,16 +95,22 @@ public class TopControll : MonoBehaviour
         yield return www;
 
         var text = MakeText(www.text);
+        //text = "2019年11月1日 10時45分【新京成線 一部列車運休】理由はうんにゃらかんにゃら";
         ChangeTextSize(text);
-        infotext.text = text;
+        if (TextManager.lang == TextManager.LANGUAGE.JAPANESE)
+        {
+            infotext.text = text;
+        }
+        else
+        {
+            infotext.text = "";
+        }
+        changeInfo(text);
     }
 
     private string MakeText(string original)
     {
-        string[] del = { "<br />" };
-
-        string[] temps = original.Split(del, StringSplitOptions.None);
-        string temp = temps[1];
+        string temp = original.Replace(br, " ");
         return temp;
     }
 
@@ -121,19 +131,127 @@ public class TopControll : MonoBehaviour
         Start();
     }
 
+    private void changeInfo(string text)
+    {
+        string path = "Sprites/icon/";
+        string wakupath = "Sprites/newIcon/unkou/";
+        Sprite image;
+        Sprite wakuimage;
+
+        Image waku = GameObject.Find("unkou").GetComponent<Image>();
+
+        if (text.Contains("新京成線は、ただいま運転を見合わせています。") || text.Contains("【新京成線 全線運転見合わせ】") || text.Contains("【新京成線 一部区間運転見合わせ】"))
+        {
+            path += "miawase";
+            wakupath += "miawase";
+            image = Resources.Load<Sprite>(path);
+            infoimage.sprite = image;
+            wakuimage = Resources.Load<Sprite>(wakupath);
+            waku.sprite = wakuimage;
+
+            infostr.text = TextManager.Get(TextManager.KEY.INFO_STOP);
+        }
+        else if (text.Contains("新京成線は、平常通り運転しています。"))
+        {
+            path += "maru";
+            wakupath += "maru";
+            image = Resources.Load<Sprite>(path);
+            infoimage.sprite = image;
+            wakuimage = Resources.Load<Sprite>(wakupath);
+            waku.sprite = wakuimage;
+
+            infostr.text = TextManager.Get(TextManager.KEY.INFO_NORMAL);
+        }
+        else
+        {
+            if (text.Contains("【新京成線 遅延】"))
+            {
+                path += "tien";
+                wakupath += "tien";
+                image = Resources.Load<Sprite>(path);
+                infoimage.sprite = image;
+                wakuimage = Resources.Load<Sprite>(wakupath);
+                waku.sprite = wakuimage;
+
+                infostr.text = TextManager.Get(TextManager.KEY.INFO_DELAY);
+            }
+            else if (text.Contains("【新京成線 一部列車運休】"))
+            {
+                path += "tien";
+                wakupath += "tien";
+                image = Resources.Load<Sprite>(path);
+                infoimage.sprite = image;
+                wakuimage = Resources.Load<Sprite>(wakupath);
+                waku.sprite = wakuimage;
+
+                infostr.text = TextManager.Get(TextManager.KEY.INFO_UNKYU);
+            }
+            else if (text.Contains("【新京成線 直通運転中止】"))
+            {
+                path += "tien";
+                wakupath += "tien";
+                image = Resources.Load<Sprite>(path);
+                infoimage.sprite = image;
+                wakuimage = Resources.Load<Sprite>(wakupath);
+                waku.sprite = wakuimage;
+
+                infostr.text = TextManager.Get(TextManager.KEY.INFO_TYOKUTU);
+            }
+            else
+            {
+                path += "infomation";
+                wakupath += "infomation";
+                image = Resources.Load<Sprite>(path);
+                infoimage.sprite = image;
+                wakuimage = Resources.Load<Sprite>(wakupath);
+                waku.sprite = wakuimage;
+
+                infostr.text = TextManager.Get(TextManager.KEY.INFO_INFO);
+            }
+        }
+    }
+
     private void WriteText()
     {
+        Text clearstr;
+        Image clearimage;
+
+        if (TextManager.lang == TextManager.LANGUAGE.JAPANESE)
+        {
+            infostr = GameObject.Find("infoStr").GetComponent<Text>();
+            infoimage = GameObject.Find("infoImage").GetComponent<Image>();
+
+            clearstr = GameObject.Find("infoStrLang").GetComponent<Text>();
+            clearimage = GameObject.Find("infoImageLang").GetComponent<Image>();
+        }
+        else
+        {
+            infostr = GameObject.Find("infoStrLang").GetComponent<Text>();
+            infoimage = GameObject.Find("infoImageLang").GetComponent<Image>();
+
+            clearstr = GameObject.Find("infoStr").GetComponent<Text>();
+            clearimage = GameObject.Find("infoImage").GetComponent<Image>();
+        }
+        clearText(clearstr, clearimage);
+
         Text unkou = GameObject.Find("hyoudai").GetComponent<Text>();
         unkou.text = TextManager.Get(TextManager.KEY.UNKOU_TITLE);
         
         Text soukou = GameObject.Find("soukouichi").GetComponentInChildren<Text>();
         soukou.text = TextManager.Get(TextManager.KEY.MENU_SOUKOU);
 
-        Text jikoku = GameObject.Find("kakueki").GetComponentInChildren<Text>();
-        jikoku.text = TextManager.Get(TextManager.KEY.MENU_EKIINFO_1);
+        Text eki = GameObject.Find("kakueki").GetComponentInChildren<Text>();
+        eki.text = TextManager.Get(TextManager.KEY.MENU_EKIINFO_1);
 
-        /*Text ekiinfo = GameObject.Find("kounaiannai").GetComponentInChildren<Text>();
-        ekiinfo.text = TextManager.Get(TextManager.KEY.MENU_EKIANNAI);*/
+        Text homepage = GameObject.Find("homepage").GetComponentInChildren<Text>();
+        homepage.text = TextManager.Get(TextManager.KEY.MENU_HOMEPAGE);
+    }
+
+    private void clearText(Text str, Image image)
+    {
+        str.text = "";
+        Sprite clear = Resources.Load<Sprite>("Sprites/clear");
+        image.sprite = clear;
     }
 
     private void ChangeTextSize(string text)

@@ -223,7 +223,7 @@ public class DisplayData : MonoBehaviour {
         Text jikoku = GameObject.Find("jikoku").GetComponentInChildren<Text>();
         jikoku.text = TextManager.Get(TextManager.KEY.JIKOKU);
 
-        Text ekiannai = GameObject.Find("kounai").GetComponentInChildren<Text>();
+        Text ekiannai = GameObject.Find("kounaiText").GetComponentInChildren<Text>();
         ekiannai.text = TextManager.Get(TextManager.KEY.MENU_EKIANNAI);
     }
 }
