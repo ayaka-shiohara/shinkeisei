@@ -33,7 +33,7 @@ MENU_SOUKOU	Train travel position
 MENU_EKIINFO_1	Station information
 MENU_EKIINFO_2	Timetable, station map, etc
 MENU_HOMEPAGE	Shin-Keisei website
-UNKOU_TITLE	Driving information
+UNKOU_TITLE	Operation Status
 UNKOU_CLOSE	close
 SOUKOU_MSG_1	The train location and delay time are approximate
 SOUKOU_MSG_2	May differ from actual

@@ -33,7 +33,7 @@ MENU_SOUKOU	火车位置
 MENU_EKIINFO_1	车站信息
 MENU_EKIINFO_2	时刻表，车站地图等
 MENU_HOMEPAGE	新京成网站
-UNKOU_TITLE	驾驶信息
+UNKOU_TITLE	运行状况
 UNKOU_CLOSE	关闭
 SOUKOU_MSG_1	火车位置和延迟时间是近似值。
 SOUKOU_MSG_2	可能与实际不同
