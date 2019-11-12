@@ -57,6 +57,12 @@ public class UnkouController : MonoBehaviour {
     {
         dialog = GameObject.Find("question").transform.Find("base").gameObject;
 
+        GameObject button = GameObject.Find("QuestionButton").transform.Find("Button").gameObject;
+        if (TextManager.lang == TextManager.LANGUAGE.JAPANESE)
+        {
+            button.SetActive(true);
+        }
+
         SetNorikae();
         SetBus();
 
